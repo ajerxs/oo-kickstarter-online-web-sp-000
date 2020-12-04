@@ -8,7 +8,11 @@ class Backer
 
   def back_project(project)
     @backed_projects << project
-    @backers.push(self.name)
+    @backers.each do |backers|
+      if backers != self.name
+        @backers << self.name
+      end
+    end
   end
 
 
